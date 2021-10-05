@@ -49,6 +49,7 @@ namespace szamitGrafika
                 kep = kep.Resize(0.3, Inter.Linear).SmoothMedian(5);
                 kep = kep.Resize(3.3, Inter.Linear);
 
+
             }
         }
 
