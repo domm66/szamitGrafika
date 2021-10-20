@@ -56,9 +56,10 @@ namespace szamitGrafika
         private void button2_Click(object sender, EventArgs e)
         {
             Image<Gray, byte> szurke = kep.Convert<Gray, byte>(); //eredeti kep szurkeve alakitasa
-            
+
             //CvInvoke.Threshold(szurke, szurke, 115, 255, ThresholdType.Binary);
             CvInvoke.Threshold(szurke, szurke, 0, 255, ThresholdType.Otsu);  //Otsu thresholding, talan kicsit jobban mukodik, de a masikkar is lehet probalkozni, csak ki kell kommentelni
+            //CvInvoke.AdaptiveThreshold(szurke, szurke, 255, AdaptiveThresholdType.GaussianC, ThresholdType.Otsu);
             Image<Bgr, byte> szurkeSzinben = szurke.Convert<Bgr, byte>();
             Mat hier = new Mat();
             VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
@@ -82,19 +83,18 @@ namespace szamitGrafika
                         int yKov = contours[i][hull[j+1]].Y;
                         if ((x + xtav)<xKov || (y + ytav)<yKov)
                         {
-                            szamlalo++;
+                            if (x<170 && x>20) 
+                            {
+                                szamlalo++;
+                                CvInvoke.Circle(szurkeSzinben, contours[i][hull[j]], 5, new MCvScalar(200, 0, 50), 2); //pontok kirajzolása
+                            }
                             //textBox1.AppendText(j + ". X: " + contours[i][hull[j]].X.ToString() + " Y: " + contours[i][hull[j]].Y.ToString() + "\r\n");
-                            CvInvoke.Circle(szurkeSzinben, contours[i][hull[j]], 5, new MCvScalar(200, 0, 50), 2); //pontok kirajzolása
                             CvInvoke.Line(szurkeSzinben, contours[i][hull[j]], contours[i][hull[j + 1]], new MCvScalar(0, 0, 155), 2); //vonalak meghuzasa
-
                         } else {
                             CvInvoke.Line(szurkeSzinben, contours[i][hull[j]], contours[i][hull[j + 1]], new MCvScalar(0, 0, 155), 2); //vonalak meghuzasa
                         }
                         textBox1.AppendText(j + ". X: " + x.ToString() + " Y: " + y.ToString() + "\r\n");
-
-                        
                     }
-                    
                 }
             }
             textBox1.AppendText(szamlalo + "\r\n");
