@@ -76,7 +76,7 @@ namespace szamitGrafika
                     if(j != hull.Size - 1)
                     {
                         int xtav = 15;
-                        int ytav = 10;
+                        int ytav = 8;
                         int x = contours[i][hull[j]].X;
                         int y = contours[i][hull[j]].Y;
                         int xKov = contours[i][hull[j+1]].X;
