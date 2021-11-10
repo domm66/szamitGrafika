@@ -70,6 +70,7 @@ namespace szamitGrafika
             for (int i = 0; i < contours.Size; i++) 
             {
                 CvInvoke.ConvexHull(contours[i], hull,true); //convex hull megalkotas
+                textBox2.AppendText(hull.Size.ToString());
 
                 for(int j=0;j<hull.Size;j++)
                 {
@@ -83,7 +84,7 @@ namespace szamitGrafika
                         int yKov = contours[i][hull[j+1]].Y;
                         if ((x + xtav)<xKov || (y + ytav)<yKov)
                         {
-                            if (x<170 && x>20) 
+                            if (x<200 && x>20) 
                             {
                                 szamlalo++;
                                 CvInvoke.Circle(szurkeSzinben, contours[i][hull[j]], 5, new MCvScalar(200, 0, 50), 2); //pontok kirajzolása
