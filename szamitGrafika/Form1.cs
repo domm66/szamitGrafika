@@ -77,12 +77,12 @@ namespace szamitGrafika
                     if(j != hull.Size - 1)
                     {
                         int xtav = 15;
-                        int ytav = 8;
+                        int ytav = 5;
                         int x = contours[i][hull[j]].X;
                         int y = contours[i][hull[j]].Y;
                         int xKov = contours[i][hull[j+1]].X;
                         int yKov = contours[i][hull[j+1]].Y;
-                        if (((x + xtav) > xKov && (y + 5) > yKov) || (y + ytav)<yKov)
+                        if ((x + xtav) < xKov || (y + ytav)<yKov)
                         {
                             if (x<200 && x>20) 
                             {
