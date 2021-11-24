@@ -158,8 +158,8 @@ namespace szamitGrafika
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.Text = "X: " + (((this.PointToClient(MousePosition).X - pictureBox1.Location.X))).ToString();
-            label2.Text = "Y: " + (((this.PointToClient(MousePosition).Y - pictureBox1.Location.Y))).ToString();
+            //label1.Text = "X: " + (((this.PointToClient(MousePosition).X - pictureBox1.Location.X))).ToString();
+            //label2.Text = "Y: " + (((this.PointToClient(MousePosition).Y - pictureBox1.Location.Y))).ToString();
         }
 
         public void reset()
@@ -244,7 +244,55 @@ namespace szamitGrafika
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                atlag = papir * 100 / fileok.Length;
+                label6.Text = atlag.ToString() + "%";
+            }
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                atlag = papir * 100 / fileok.Length;
+            }
+            else if (checkBox2.Checked)
+            {
+                atlag = ollo * 100 / fileok.Length;
+            }
+            else if (checkBox3.Checked)
+            {
+                atlag = ko * 100 / fileok.Length;
+            }
+
+            //textBox1.Text = papir.ToString() + " " + fileok.Length.ToString() + "=" + atlag.ToString();
+            label6.Text = atlag.ToString() + "%";
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                atlag = ollo * 100 / fileok.Length;
+                label6.Text = atlag.ToString() + "%";
+            }
+           
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBox3.Checked)
+            {
+                atlag = ko * 100 / fileok.Length;
+                label6.Text = atlag.ToString() + "%";
+            }
+        }
+
+        private void checkBox3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
