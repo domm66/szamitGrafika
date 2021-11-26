@@ -39,8 +39,8 @@ namespace szamitGrafika
         public Form1()
         {
             InitializeComponent();
-            textBox3.Text = "15";
-            textBox4.Text = "13";
+            //textBox3.Text = "15";
+            //textBox4.Text = "13";
         }
 
         public void fileAdd()
@@ -97,8 +97,8 @@ namespace szamitGrafika
                 {
                     if (j != hull.Size - 1)
                     {
-                        int xtav = int.Parse(textBox3.Text);
-                        int ytav = int.Parse(textBox4.Text);
+                        int xtav = 15;
+                        int ytav = 13;
                         int x = contours[i][hull[j]].X;
                         int y = contours[i][hull[j]].Y;
                         int xKov = contours[i][hull[j + 1]].X;
@@ -158,8 +158,7 @@ namespace szamitGrafika
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            //label1.Text = "X: " + (((this.PointToClient(MousePosition).X - pictureBox1.Location.X))).ToString();
-            //label2.Text = "Y: " + (((this.PointToClient(MousePosition).Y - pictureBox1.Location.Y))).ToString();
+           
         }
 
         public void reset()
