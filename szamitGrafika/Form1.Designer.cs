@@ -40,12 +40,15 @@ namespace szamitGrafika
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(353, 74);
+            this.button1.Location = new System.Drawing.Point(471, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 1;
@@ -55,7 +58,7 @@ namespace szamitGrafika
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(353, 103);
+            this.button2.Location = new System.Drawing.Point(576, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 2;
@@ -65,9 +68,9 @@ namespace szamitGrafika
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(457, 102);
+            this.button3.Location = new System.Drawing.Point(576, 98);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 23);
+            this.button3.Size = new System.Drawing.Size(98, 23);
             this.button3.TabIndex = 7;
             this.button3.Text = "Reset";
             this.button3.UseVisualStyleBackColor = true;
@@ -84,7 +87,7 @@ namespace szamitGrafika
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(353, 45);
+            this.button5.Location = new System.Drawing.Point(471, 56);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(98, 23);
             this.button5.TabIndex = 14;
@@ -94,9 +97,10 @@ namespace szamitGrafika
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(457, 74);
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(576, 56);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(113, 23);
+            this.button6.Size = new System.Drawing.Size(98, 23);
             this.button6.TabIndex = 15;
             this.button6.Text = "Szazalek kiiras";
             this.button6.UseVisualStyleBackColor = true;
@@ -106,7 +110,7 @@ namespace szamitGrafika
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(353, 137);
+            this.label6.Location = new System.Drawing.Point(348, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 46);
             this.label6.TabIndex = 16;
@@ -115,7 +119,8 @@ namespace szamitGrafika
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(353, 201);
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(471, 86);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(53, 19);
             this.checkBox1.TabIndex = 17;
@@ -126,7 +131,8 @@ namespace szamitGrafika
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(353, 227);
+            this.checkBox2.Enabled = false;
+            this.checkBox2.Location = new System.Drawing.Point(471, 112);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(48, 19);
             this.checkBox2.TabIndex = 18;
@@ -138,7 +144,7 @@ namespace szamitGrafika
             // 
             this.pictureBox1.Location = new System.Drawing.Point(25, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(539, 362);
+            this.pictureBox1.Size = new System.Drawing.Size(309, 362);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
@@ -146,7 +152,8 @@ namespace szamitGrafika
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(353, 252);
+            this.checkBox3.Enabled = false;
+            this.checkBox3.Location = new System.Drawing.Point(471, 137);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(40, 19);
             this.checkBox3.TabIndex = 19;
@@ -155,11 +162,42 @@ namespace szamitGrafika
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             this.checkBox3.Click += new System.EventHandler(this.checkBox3_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(353, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 15);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Egy kep beolvasasa:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(353, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 15);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Mappa beolvasasa:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 410);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 318);
+            this.ClientSize = new System.Drawing.Size(699, 428);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -192,6 +230,9 @@ namespace szamitGrafika
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
