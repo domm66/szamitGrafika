@@ -66,6 +66,8 @@ namespace szamitGrafika
         private void button1_Click(object sender, EventArgs e)
         {
             fileAdd();
+            xtav = 15; //= 20;
+            ytav = 9;
         }
 
         public void convexHull() 
