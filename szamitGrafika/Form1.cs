@@ -24,15 +24,15 @@ namespace szamitGrafika
 
         Image<Bgr, byte> kep;
         Image<Bgr, byte> eredeti;
-        int szamlalo;
-        int papir;
-        int ko;
-        int ollo;
+        double szamlalo;
+        double papir;
+        double ko;
+        double ollo;
         Image<Hsv, byte> imgInput;
         string path;
         string[] fileok;
         int i = 0;
-        int atlag;
+        double atlag;
         int xtav; //= 20;
         int ytav; //= 11;
 
@@ -65,6 +65,7 @@ namespace szamitGrafika
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //res
             fileAdd();
             xtav = 15; //= 20;
             ytav = 9;
@@ -248,19 +249,19 @@ namespace szamitGrafika
             //textBox1.Text = papir.ToString();
             if (checkBox1.Checked)
             {
-                atlag = papir * 100 / fileok.Length;
+                atlag = (papir  / fileok.Length)*100;
             }
             else if (checkBox2.Checked)
             {
-                atlag = ollo * 100 / fileok.Length;
+                atlag = (ollo  / fileok.Length) * 100;
             }
             else if (checkBox3.Checked) 
             {
-                atlag = ko * 100 / fileok.Length;
+                atlag = (ko  / fileok.Length) * 100;
             }
             
             //textBox1.Text = papir.ToString() + " " + fileok.Length.ToString() + "=" + atlag.ToString();
-            label6.Text = atlag.ToString() + "%";
+            label6.Text = String.Format("{0:F2}", atlag) + "%";
             button6.Enabled = false;
             
         }
@@ -275,8 +276,8 @@ namespace szamitGrafika
             }
             if (checkBox1.Checked)
             {
-                atlag = papir * 100 / fileok.Length;
-                label6.Text = atlag.ToString() + "%";
+                atlag = (papir / fileok.Length) * 100;
+                label6.Text = String.Format("{0:F2}", atlag) + "%";
             }
         }
 
@@ -284,7 +285,7 @@ namespace szamitGrafika
         {
             if (checkBox1.Checked)
             {
-                atlag = papir * 100 / fileok.Length;
+                atlag = (papir / fileok.Length) * 100;
             }
             else if (checkBox2.Checked)
             {
@@ -296,7 +297,7 @@ namespace szamitGrafika
             }
 
             //textBox1.Text = papir.ToString() + " " + fileok.Length.ToString() + "=" + atlag.ToString();
-            label6.Text = atlag.ToString() + "%";
+            label6.Text = String.Format("{0:F2}", atlag) + "%";
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -309,8 +310,8 @@ namespace szamitGrafika
             }
             if (checkBox2.Checked)
             {
-                atlag = ollo * 100 / fileok.Length;
-                label6.Text = atlag.ToString() + "%";
+                atlag = (ollo / fileok.Length) * 100;
+                label6.Text = String.Format("{0:F2}", atlag) + "%";
             }
            
         }
@@ -325,8 +326,8 @@ namespace szamitGrafika
             }
             if (checkBox3.Checked)
             {
-                atlag = ko * 100 / fileok.Length;
-                label6.Text = atlag.ToString() + "%";
+                atlag = (ko / fileok.Length) * 100;
+                label6.Text = String.Format("{0:F2}", atlag) + "%";
             }
         }
 
